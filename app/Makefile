@@ -1,11 +1,11 @@
 build:
-	./gradlew clean build
+	@./gradlew clean build
 
 clean:
-	./gradlew clean
+	@./gradlew clean
 
 install:
-	./gradlew clean install
+	@./gradlew installDist
 
 run-dist:
-	./build/install/app/bin/app
+	@./build/install/app/bin/app
