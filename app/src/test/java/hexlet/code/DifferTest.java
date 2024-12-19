@@ -1,8 +1,8 @@
 package hexlet.code;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class DifferTest {
 
@@ -13,6 +13,4 @@ class DifferTest {
 
         assertTrue(json1.equals(json2));
     }
-
-
 }
