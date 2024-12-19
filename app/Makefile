@@ -1,3 +1,5 @@
+.PHONY: all build clean install run-dist lint
+
 build:
 	@./gradlew clean build
 
@@ -9,3 +11,6 @@ install:
 
 run-dist:
 	@./build/install/app/bin/app
+
+lint:
+	@./gradlew checkstyleMain checkstyleTest
