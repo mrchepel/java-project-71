@@ -1,4 +1,4 @@
-.PHONY: all build clean install run-dist lint
+.PHONY: build
 
 build:
 	@./gradlew clean build
@@ -17,3 +17,6 @@ lint:
 
 report:
 	@./gradlew jacocoTestReport
+
+test:
+	@./gradlew test

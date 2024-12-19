@@ -1,4 +1,4 @@
-.PHONY: lint build install
+.PHONY: build
 
 lint:
 	@make -C app lint
@@ -11,3 +11,6 @@ install:
 
 report:
 	@make -C app report
+
+test:
+	@make -C app test
