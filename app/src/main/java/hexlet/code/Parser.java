@@ -21,6 +21,7 @@ public class Parser {
         Path normalizePath = getPath(filePath);
         String content = new String(Files.readAllBytes(normalizePath));
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(content, new TypeReference<>() {});
+        return mapper.readValue(content, new TypeReference<>() {
+        });
     }
 }

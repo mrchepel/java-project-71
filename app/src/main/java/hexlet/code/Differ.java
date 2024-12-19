@@ -16,7 +16,7 @@ public class Differ {
 
         StringBuilder stringBuilder = new StringBuilder("{\n");
 
-        for (var key: allKeys) {
+        for (var key : allKeys) {
             Object value1 = data1.get(key);
             Object value2 = data2.get(key);
             if (!data1.containsKey(key)) {
