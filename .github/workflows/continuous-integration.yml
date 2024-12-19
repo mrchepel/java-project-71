@@ -11,5 +11,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+      - run: make lint
       - run: make build
       - run: make install
