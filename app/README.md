@@ -1,0 +1,1 @@
+[![continuous-integration](https://github.com/mrchepel/java-project-71/actions/workflows/continuous-integration.yml/badge.svg?branch=main)](https://github.com/mrchepel/java-project-71/actions/workflows/continuous-integration.yml)
