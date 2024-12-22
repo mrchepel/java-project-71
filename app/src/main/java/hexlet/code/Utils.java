@@ -12,4 +12,8 @@ public class Utils {
         }
         return filePath;
     }
+
+    public static String getFormat(String filePath) {
+        return filePath.substring(filePath.indexOf('.') + 1);
+    }
 }
