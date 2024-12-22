@@ -30,9 +30,25 @@ class DifferTest {
     }
 
     @Test
-    void testDiffer() throws Exception {
+    void testDifferJson() throws Exception {
         var path1 = getFixturePath("file1.json");
         var path2 = getFixturePath("file2.json");
+        String actual = Differ.generate(path1.toString(), path2.toString());
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testDifferYaml() throws Exception {
+        var path1 = getFixturePath("file1.yaml");
+        var path2 = getFixturePath("file2.yaml");
+        String actual = Differ.generate(path1.toString(), path2.toString());
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testDifferYml() throws Exception {
+        var path1 = getFixturePath("file1.yml");
+        var path2 = getFixturePath("file2.yml");
         String actual = Differ.generate(path1.toString(), path2.toString());
         assertEquals(expected, actual);
     }
