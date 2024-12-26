@@ -1,1 +1,3 @@
 [![continuous-integration](https://github.com/mrchepel/java-project-71/actions/workflows/continuous-integration.yml/badge.svg?branch=main)](https://github.com/mrchepel/java-project-71/actions/workflows/continuous-integration.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a5c44a30b6ea528375ce/maintainability)](https://codeclimate.com/github/mrchepel/java-project-71/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a5c44a30b6ea528375ce/test_coverage)](https://codeclimate.com/github/mrchepel/java-project-71/test_coverage)
