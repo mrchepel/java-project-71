@@ -1,37 +1,39 @@
 package hexlet.code;
 
-import java.util.Set;
-import java.util.TreeSet;
+import hexlet.code.formatter.Formatter;
+
+import java.util.TreeMap;
 import java.util.Objects;
 
 public class Differ {
-    public static String generate(String filepath1, String filepath2) throws Exception {
+    public static String generate(String filepath1, String filepath2, String format) throws Exception {
         var data1 = Parser.parse(filepath1);
         var data2 = Parser.parse(filepath2);
 
-        Set<String> allKeys = new TreeSet<>();
+        TreeMap<String, Node> differences = new TreeMap<>();
 
-        allKeys.addAll(data1.keySet());
-        allKeys.addAll(data2.keySet());
-
-        StringBuilder stringBuilder = new StringBuilder("{\n");
-
-        for (var key : allKeys) {
-            Object value1 = data1.get(key);
-            Object value2 = data2.get(key);
-            if (!data1.containsKey(key)) {
-                stringBuilder.append(String.format("  + %s: %s\n", key, value2));
-            } else if (!data2.containsKey(key)) {
-                stringBuilder.append(String.format("  - %s: %s\n", key, value1));
-            } else if (Objects.equals(value1, value2)) {
-                stringBuilder.append(String.format("    %s: %s\n", key, value1));
+        data1.forEach((key, value) -> {
+            if (data2.containsKey(key)) {
+                if (!Objects.equals(value, data2.get(key))) {
+                    differences.put(key, new Node(OperationType.UPDATED, value, data2.get(key)));
+                } else {
+                    differences.put(key, new Node(OperationType.UNCHANGED, value, value));
+                }
             } else {
-                stringBuilder.append(String.format("  - %s: %s\n", key, value1));
-                stringBuilder.append(String.format("  + %s: %s\n", key, value2));
+                differences.put(key, new Node(OperationType.DELETED, value, null));
             }
-        }
-        stringBuilder.append("}");
+        });
 
-        return stringBuilder.toString();
+        data2.forEach((key, value) -> {
+            if (!data1.containsKey(key)) {
+                differences.put(key, new Node(OperationType.ADDED, null, value));
+            }
+        });
+
+        return Formatter.formatter(differences);
+    }
+
+    public static String generate(String path1, String path2) throws Exception {
+        return generate(path1, path2, "stylish");
     }
 }

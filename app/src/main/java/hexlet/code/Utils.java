@@ -28,7 +28,7 @@ public class Utils {
         return Files.readString(normalizePath);
     }
 
-    public static String getFormat(String filePath) throws IOException {
+    public static String getFormat(String filePath) {
         if (filePath == null || filePath.isEmpty()) {
             return "";
         }
