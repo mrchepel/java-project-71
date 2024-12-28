@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class Node {
+public final class Node {
     public Node(OperationType type, Object oldValue, Object newValue) {
         this.type = type;
         this.oldValue = oldValue;

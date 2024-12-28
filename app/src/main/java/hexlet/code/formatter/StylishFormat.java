@@ -11,6 +11,12 @@ public class StylishFormat implements Format {
     private static final String NO_CHANGES = "    ";
     public static final String STYLISH = "stylish";
 
+    /**
+     * @param diffData data differences
+     * @return text format stylish
+     */
+
+
     public String generate(TreeMap<String, Node> diffData) {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");

@@ -14,6 +14,11 @@ import java.util.TreeMap;
 public class JsonFormat implements Format {
     public static final String JSON = "json";
 
+    /**
+     * @param diffData data differences
+     * @return json
+     */
+
     public String generate(TreeMap<String, Node> diffData) throws JsonProcessingException {
         Map<OperationType, List<Node>> nodesByType = new EnumMap<>(OperationType.class);
         ObjectMapper mapper = new ObjectMapper();

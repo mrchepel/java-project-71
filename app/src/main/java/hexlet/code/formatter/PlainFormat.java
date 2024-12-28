@@ -11,6 +11,11 @@ public class PlainFormat implements Format {
     private static final String PROPERTY = "Property '";
     public static final String PLAIN = "plain";
 
+    /**
+     * @param diffData data differences
+     * @return text format plain
+     */
+
     public String generate(TreeMap<String, Node> diffData) throws IllegalStateException {
         StringBuilder builder = new StringBuilder();
         diffData.forEach((key, node) -> {
