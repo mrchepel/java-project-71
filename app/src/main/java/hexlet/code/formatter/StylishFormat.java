@@ -5,10 +5,11 @@ import hexlet.code.OperationType;
 
 import java.util.TreeMap;
 
-public class StylishFormat {
+public class StylishFormat implements Format {
     private static final String PLUS = "  + ";
     private static final String MINUS = "  - ";
     private static final String NO_CHANGES = "    ";
+    public static final String STYLISH = "stylish";
 
     public String generate(TreeMap<String, Node> diffData) {
         StringBuilder sb = new StringBuilder();

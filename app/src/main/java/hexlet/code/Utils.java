@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 
 public class Utils {
     public static Path getPath(String path) throws Exception {
@@ -39,5 +42,11 @@ public class Utils {
         }
 
         return filePath.substring(lastIndex + 1).trim();
+    }
+
+    public static boolean isComplexValue(Object value) {
+        return value instanceof LinkedHashMap
+                || value instanceof LinkedList
+                || value instanceof ArrayList;
     }
 }

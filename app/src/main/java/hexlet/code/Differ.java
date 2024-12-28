@@ -5,6 +5,8 @@ import hexlet.code.formatter.Formatter;
 import java.util.TreeMap;
 import java.util.Objects;
 
+import static hexlet.code.formatter.StylishFormat.STYLISH;
+
 public class Differ {
     public static String generate(String filepath1, String filepath2, String format) throws Exception {
         var data1 = Parser.parse(filepath1);
@@ -30,10 +32,10 @@ public class Differ {
             }
         });
 
-        return Formatter.formatter(differences);
+        return Formatter.format(differences, format);
     }
 
-    public static String generate(String path1, String path2) throws Exception {
-        return generate(path1, path2, "stylish");
+    public static String generate(String filepath1, String filepath2) throws Exception {
+        return generate(filepath1, filepath2, STYLISH);
     }
 }
