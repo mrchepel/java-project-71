@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static hexlet.code.Utils.getTextFromFile;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
