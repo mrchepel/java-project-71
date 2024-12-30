@@ -11,14 +11,14 @@ import static hexlet.code.formatter.PlainFormat.PLAIN;
 import static hexlet.code.formatter.StylishFormat.STYLISH;
 
 public class Formatter {
-    private static final Map<String, Format> formats = Map.of(
+    private static final Map<String, Format> FORMATS = Map.of(
             STYLISH, new StylishFormat(),
             PLAIN, new PlainFormat(),
             JSON, new JsonFormat()
     );
 
     public static String format(TreeMap<String, Node> diffData, String format) throws JsonProcessingException {
-        return formats.get(format).generate(diffData);
+        return FORMATS.get(format).generate(diffData);
     }
 
 }
